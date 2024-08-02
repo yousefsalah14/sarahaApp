@@ -21,6 +21,12 @@ const userSchema = new Schema( {
         min: 5,
         max:20,
         required: true
+    },
+    profilePic: {
+        type :  String
+    },
+    coverPic: {
+        type :  [String]
     }
 },{timestamps:true} )
 
