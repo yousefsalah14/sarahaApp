@@ -22,12 +22,9 @@ const userSchema = new Schema( {
         max:20,
         required: true
     },
-    profilePic: {
-        type :  String
-    },
-    coverPic: {
-        type :  [String]
-    }
+    profilePic: { secure_url : String , public_id : String}
+    ,
+    coverPic:[{ secure_url : String , public_id : String}]
 },{timestamps:true} )
 
 //model
