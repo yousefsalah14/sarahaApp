@@ -22,6 +22,8 @@ const userSchema = new Schema( {
         max:20,
         required: true
     },
+    isConfirmed: { type: Boolean, default: false },
+    forgetCode :{type : String , unique : true},
     profilePic: { secure_url : String , public_id : String}
     ,
     coverPic:[{ secure_url : String , public_id : String}]

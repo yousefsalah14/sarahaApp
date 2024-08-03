@@ -8,5 +8,11 @@ const router = Router()
 router.post('/signup',validation(authSchema.signupSchema),authContoller.signup)
 //login
 router.post( '/login', validation(authSchema.loginSchema),authContoller.login )
+// activate Accout
+router.get( '/activate_accout/:token', validation( authSchema.activateSchema ), authContoller.Activate )
+// send forget code
+router.patch("/forget",validation(authSchema.forgetCodeSchema),authContoller.sendForgetCode)
+// reset password
+router.patch('/reset_password',validation(authSchema.resetPasswordSchema),authContoller.resetPassword)
 
 export default router

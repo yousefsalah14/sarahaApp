@@ -16,3 +16,19 @@ import joi from 'joi'
         password: joi.string().pattern( new RegExp( '^[a-zA-Z0-9]{3,30}$' ) ).required(),
         
     } ).required()
+    export const forgetCodeSchema = joi.object( {
+        email: joi.string().email().required()
+        
+    } ).required()
+    
+    export const activateSchema = joi.object( {
+        token: joi.string().required()
+        
+    } ).required()
+    export const resetPasswordSchema = joi.object( {
+        email: joi.string().email().required(),
+        code : joi.string().length(5).required(),
+        password: joi.string().pattern( new RegExp( '^[a-zA-Z0-9]{3,30}$' ) ).required(),
+        confirmPassword :joi.string().valid(joi.ref("password")).required()
+        
+    } ).required()

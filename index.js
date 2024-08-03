@@ -10,9 +10,10 @@ const port = process.env.PORT
 //parse 
 app.use( express.json() )
 app.use("/uploads",express.static("uploads"))
-// db connection
+// db connection 
 await connectDB()
 // routers
+
 app.use("/auth",authRouter)
 app.use( "/message", messageRouter )
 app.use("/user",userRouter)
